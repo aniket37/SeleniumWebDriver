@@ -28,11 +28,22 @@ public class radioButton {
 			}
 		}
 
-		// for experience year selecctions
+		// for experience year selections
 		Thread.sleep(2000);
 		List<WebElement> exp = driver
 				.findElements(By.xpath("// label[@class='custom-control-label' and contains(@for,'year')]"));
-		System.out.println(exp.size());
+		System.out.println("The number of element in year xpath" + exp.size());
+		for (WebElement j : exp) {
+
+			String ex = j.getAttribute("for");
+			System.out.println(ex);
+			if (ex.equals("1year") || ex.equals("4years")) {
+				j.click();
+			}
+			Thread.sleep(1000);
+		}
+
+		Thread.sleep(2000);
 		driver.close();
 
 	}
