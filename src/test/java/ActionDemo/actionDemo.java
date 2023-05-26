@@ -1,4 +1,4 @@
-package login;
+package ActionDemo;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

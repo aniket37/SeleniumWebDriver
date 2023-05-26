@@ -1,7 +1,6 @@
-package selectClassDropdown;
+package Dropdown_SELECT_Class;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -15,12 +14,13 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class dropDown {
-	public static void main(String[] args) throws InterruptedException, IOException {
+	public static void main(String[] args) throws Exception {
 
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://blazedemo.com/");
+
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
 
@@ -77,12 +77,10 @@ public class dropDown {
 		driver.findElement(By.xpath("/html/body/div[2]/form/div[11]/div/input")).click();
 		Thread.sleep(2000);
 
+//		taking Screenshot in next 4 lines 
 		TakesScreenshot sc = ((TakesScreenshot) driver);
-
 		File src = sc.getScreenshotAs(OutputType.FILE);
-
 		File f2 = new File("C:\\Users\\Ghanendra\\Desktop\\AniketWebdriverScreenshot.png");
-
 		FileUtils.copyFile(src, f2);
 
 		Thread.sleep(3000);
